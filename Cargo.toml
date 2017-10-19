@@ -1,0 +1,30 @@
+[package]
+name = "auth_rocket"
+version = "0.1.0"
+authors = ["y.nasyrov <y.nasyrov@xsolla.com>"]
+
+[dependencies]
+log = "0.3"
+serde_derive = "1.0"
+serde = "1.0"
+serde_json = "1.0"
+r2d2 = "0.7"
+rust-crypto = "0.2"
+chrono = "0.4"
+double = "0.1"
+rocket = "0.3"
+rand = "0.3"
+rocket_codegen = "0.3"
+rocket_contrib = "0.3"
+
+[dependencies.redis]
+optional = true
+version = "0.7"
+
+[dependencies.r2d2_redis]
+optional = true
+version = "0.5"
+
+[features]
+default = ['with-redis']
+with-redis = ['redis', 'r2d2_redis']
